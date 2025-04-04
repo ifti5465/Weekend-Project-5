@@ -1,44 +1,7 @@
 import requests
-from web3 import Web3
 
 OLLAMA_API_URL = "http://localhost:11434/api/chat"  
 MODEL_NAME = "llama3" 
-
-CONTRACT_ADDRESS = '0x35A517872aD6B5A981667cF0b571E43FFC579FED'
-
-ABI = [
-    {
-        "inputs": [],
-        "name": "receive",
-        "stateMutability": "payable",
-        "type": "function",
-    },
-    {
-        "inputs": [],
-        "name": "withdraw",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function",
-    },
-    {
-        "name": "PaymentReceived",
-        "type": "event",
-        "inputs": [
-            {"indexed": True, "name": "from", "type": "address"},
-            {"indexed": False, "name": "amount", "type": "uint256"},
-        ],
-    },
-]
-
-w3 = Web3(Web3.HTTPProvider('http://127.0.0.1:7545')) 
-
-# Check if connected to the Ethereum network
-if not w3.isConnected():
-    print("Failed to connect to the Ethereum network. Please check your provider.")
-    exit()
-
-# Initialize the smart contract
-contract = w3.eth.contract(address=0x35A517872aD6B5A981667cF0b571E43FFC579FED, abi=ABI)
 
 # Initial system message that sets up the bot's persona - hidden from user
 initial_system_message = """You are an experienced Indian chef with a specialty in brown cuisine. You provide tips and tricks for cooking and food preparation. You are clear and provide excellent recipes tailored to users' needs. You're knowledgeable about different cuisines and cooking techniques, patient and understanding with questions.
