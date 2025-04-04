@@ -2,4 +2,12 @@
 
 Chose the OpenAI API from one of the Chef personalities from Week 1 to replace with llama3.
 
-Used remix for the smart contract.
+HOW TO USE
+
+1. git clone
+
+2. cd Weekend-Project-5
+
+3. ollama pull llama3
+
+4. Then run the python file.
